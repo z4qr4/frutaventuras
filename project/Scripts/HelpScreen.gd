@@ -30,6 +30,10 @@ func _ready():
 	for sintoma in infection["sintomas"]["general"]:
 		sintomas += "\n"
 		sintomas += sintoma
+	if infection["sintomas"]["hombres"].size() != null:
+		for sintoma in infection["sintomas"]["hombres"]:
+			sintomas += "\n"
+			sintomas += sintoma
 	description.text += sintomas
 	$confirm.get_cancel().connect("pressed", self, "_on_confirm_canceled")
 

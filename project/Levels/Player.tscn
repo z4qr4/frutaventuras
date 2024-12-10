@@ -48,6 +48,7 @@ far = 500.0
 [node name="Model" type="Spatial" parent="SmoothMove"]
 
 [node name="peach" parent="SmoothMove/Model" instance=ExtResource( 8 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0

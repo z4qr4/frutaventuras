@@ -17,9 +17,9 @@ func _physics_process(delta):
 	var sw = int(Input.is_action_pressed("sr")) - int(Input.is_action_pressed("sl"))
 	
 	var motion = Vector3(sw, 0, fw).normalized()
-	
+	rotation = $"../SmoothMove/CameraRig/turn".rotation
 
-	translate(motion/10)
+	translate(motion/5)
 	
 	pass
 
