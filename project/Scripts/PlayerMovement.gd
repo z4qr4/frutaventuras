@@ -2,6 +2,12 @@ extends StaticBody
 
 export var map_size: Vector2
 
+var center_lat: float
+var center_lon: float
+
+var lon_range: float
+var lat_range: float
+
 
 func _physics_process(delta):
 	
@@ -13,14 +19,8 @@ func _physics_process(delta):
 #	translate(Vector3(sw, 0, fw)/10)
 
 
-func gps_to_godot(lat: float, lon: float) -> Vector3:
-	"""
-	Convierte coordenadas GPS a posición en el espacio de Godot.
-
-	:param lat: Latitud en grados GPS.
-	:param lon: Longitud en grados GPS.
-	:return: Vector3 con la posición traducida en el espacio de Godot.
-	"""
+func _ready():
+	
 	# Coordenadas del bounding box en grados GPS
 	var north = -12.0507
 	var south = -12.062
@@ -28,16 +28,20 @@ func gps_to_godot(lat: float, lon: float) -> Vector3:
 	var west = -77.0888
 
 	# Centro del mapa en GPS
-	var center_lat = (north + south) / 2.0
-	var center_lon = (east + west) / 2.0
+	center_lat = (north + south) / 2.0
+	center_lon = (east + west) / 2.0
 
 	# Dimensiones del bounding box en grados
-	var lat_range = abs(north - south)
-	var lon_range = abs(east - west)
+	lat_range = abs(north - south)
+	lon_range = abs(east - west)
 
 	# Escalado a unidades de Godot (1:1)
 	var scale_x = 1 / lon_range  # Unidades por grado de longitud
 	var scale_y = 1 / lat_range  # Unidades por grado de latitud
+	
+
+
+func gps_to_godot(lat: float, lon: float) -> Vector3:
 
 	# Desplazamiento relativo desde el centro del mapa en grados GPS
 	var delta_lat = lat - center_lat
