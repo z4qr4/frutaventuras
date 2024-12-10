@@ -30,7 +30,7 @@ func _ready():
 	for sintoma in infection["sintomas"]["general"]:
 		sintomas += "\n"
 		sintomas += sintoma
-	if infection["sintomas"]["hombres"].size() != null:
+	if infection["sintomas"]["hombres"] != null:
 		for sintoma in infection["sintomas"]["hombres"]:
 			sintomas += "\n"
 			sintomas += sintoma
