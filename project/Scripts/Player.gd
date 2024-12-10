@@ -11,12 +11,6 @@ func _ready():
 	update_score()
 	PlayerStats.connect("inventory_changed", self, "update_inventory")
 	PlayerStats.connect("score_changed", self, "update_score")
-	var body = PlayerStats.body.instance()
-	var eyes = PlayerStats.eyes.instance()
-	var mouth = PlayerStats.mouth.instance()
-	$SmoothMove/Model.add_child(body)
-	$SmoothMove/Model.add_child(eyes)
-	$SmoothMove/Model.add_child(mouth)
 
 
 func _process(delta):

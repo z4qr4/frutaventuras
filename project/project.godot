@@ -45,14 +45,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Frutaventuras Seguras"
-run/main_scene="res://Levels/Initial.tscn"
+run/main_scene="res://Levels/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
+AvatarItems="*res://Scripts/AvatarItems.gd"
 PlayerStats="*res://Scripts/PlayerStats.gd"
 Its="*res://Scripts/its.gd"
-AvatarItems="*res://Scripts/AvatarItems.gd"
 
 [display]
 

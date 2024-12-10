@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/NPC.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Models/Bodies/eggplant.escn" type="PackedScene" id=3]
 
 [sub_resource type="SphereShape" id=1]
 radius = 2.5
@@ -9,6 +10,8 @@ radius = 2.5
 script = ExtResource( 1 )
 npc_name = "Manolo"
 bio = "Odia el tráfico de Lima."
+
+[node name="eggplant" parent="." instance=ExtResource( 3 )]
 
 [node name="Model" type="Spatial" parent="."]
 

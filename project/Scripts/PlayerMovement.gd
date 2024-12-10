@@ -11,7 +11,7 @@ var lat_range: float
 
 func _physics_process(delta):
 	
-#	position = gps_to_godot(PlayerStats.lat, PlayerStats.lon)
+	position = gps_to_godot(PlayerStats.lat, PlayerStats.lon)
 	
 #	var fw = int(Input.is_action_pressed("bw")) - int(Input.is_action_pressed("fw"))
 #	var sw = int(Input.is_action_pressed("sr")) - int(Input.is_action_pressed("sl"))

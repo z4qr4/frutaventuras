@@ -13,8 +13,10 @@ const edible_screen = "res://Levels/Screens/Ligue.tscn"
 const help_sreen = "res://Levels/Screens/Ayuda.tscn"
 
 const names = [
-	"Meliza Cotona",
-	"Sandra Durazna",
+	"Pedro",
+	"Diego",
+	"Juan Carlos",
+	"Roberto",
 ]
 
 
@@ -22,13 +24,6 @@ func random():
 	randomize()
 	type = randi()%2
 	npc_name = names[randi()%names.size()]
-	var random_get = AvatarItems.get_random()
-	var body = random_get[0].instance()
-	var eyes = random_get[1].instance()
-	var mouth = random_get[2].instance()
-	$Model.add_child(body)
-	$Model.add_child(eyes)
-	$Model.add_child(mouth)
 	
 
 

@@ -33,28 +33,7 @@ func add_inventory(val: int):
 
 
 func save():
-	var saver = Saver.new()
-	saver.player_name = player_name
-	saver.player_score = player_score
-	saver.inventory = inventory
-	saver.body = body
-	saver.eyes = eyes
-	saver.mouth = mouth
-	saver.save()
-
-
-func load_game():
-	var loader = Saver.new()
-	var saver = loader.load_game()
-	if saver != null:
-		player_name = saver.player_name
-		player_score = saver.player_score
-		inventory = saver.inventory
-		body = saver.body
-		eyes = saver.eyes
-		mouth = saver.mouth
-		load_world()
-	else: choose_avatar()
+	pass
 
 
 func load_world():

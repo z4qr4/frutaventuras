@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/CameraRig.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PlayerMovement.gd" type="Script" id=2]
@@ -7,20 +7,26 @@
 [ext_resource path="res://Graphics/BaseTheme.tres" type="Theme" id=5]
 [ext_resource path="res://Graphics/Fonts/Bold.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Graphics/Icons/condom.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Models/Bodies/peach.escn" type="PackedScene" id=8]
 
 [sub_resource type="SphereMesh" id=2]
 radius = 0.2
 height = 0.4
 
 [sub_resource type="SphereShape" id=1]
+radius = 2.0
 
 [node name="Player" type="Spatial"]
 script = ExtResource( 3 )
 
+[node name="peach" parent="." instance=ExtResource( 8 )]
+
 [node name="PlayerCol" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56609, 0 )
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="PlayerCol"]
+visible = false
 mesh = SubResource( 2 )
 skeleton = NodePath("../CollisionShape")
 
