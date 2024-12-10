@@ -7,8 +7,8 @@ export (PackedScene) var body
 export (PackedScene) var eyes
 export (PackedScene) var mouth
 
-var lat: float
-var lon: float
+var lat
+var lon
 
 signal score_changed
 signal inventory_changed
