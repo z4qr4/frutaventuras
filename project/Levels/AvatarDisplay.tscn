@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/AvatarDisplay.gd" type="Script" id=2]
+
+[node name="AvatarDisplay" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="Eyes" type="Spatial" parent="."]
+
+[node name="Mouth" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622395, 1.02088 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02509, 6.12678 )
+current = true

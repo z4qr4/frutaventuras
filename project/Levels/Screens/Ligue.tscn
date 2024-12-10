@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Graphics/Fonts/Bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/EdibleScreen.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/BaseTheme.tres" type="Theme" id=3]
+
+[node name="Ligue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+nombre_path = NodePath("Container/nombre")
+descripcion_path = NodePath("Container/descripcion")
+
+[node name="Container" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -246.0
+margin_top = -20.0
+margin_right = 246.0
+margin_bottom = 375.0
+
+[node name="nombre" type="Label" parent="Container"]
+anchor_right = 1.0
+margin_left = 26.0
+margin_top = 19.0
+margin_right = -26.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 1 )
+text = "NPC Name"
+clip_text = true
+
+[node name="descripcion" type="Label" parent="Container"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 46.0
+margin_top = -124.5
+margin_right = -46.0
+margin_bottom = 0.5
+text = "Lorem ipsum dolor sit amet.
+"
+autowrap = true
+
+[node name="ligar" type="Button" parent="Container"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = 68.5
+margin_right = -51.0
+margin_bottom = 91.5
+text = "Ligar"
+
+[node name="pasar" type="Button" parent="Container"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 51.0
+margin_top = 68.5
+margin_right = 93.0
+margin_bottom = 91.5
+text = "Pasar"
+
+[node name="confirm" type="AcceptDialog" parent="."]
+use_parent_material = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -167.0
+margin_top = -74.0
+margin_right = 167.0
+margin_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+dialog_text = "¡Delicioso! Has saciado tu hambre y has ganado un punto."
+dialog_autowrap = true
+
+[connection signal="pressed" from="Container/ligar" to="." method="_on_ligar_pressed"]
+[connection signal="pressed" from="Container/pasar" to="." method="_on_pasar_pressed"]

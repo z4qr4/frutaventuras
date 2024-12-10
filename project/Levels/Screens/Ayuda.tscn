@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Graphics/Fonts/Bold.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/HelpScreen.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/BaseTheme.tres" type="Theme" id=3]
+
+[node name="Ayuda" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+nombre_path = NodePath("Container/nombre")
+description_path = NodePath("Container/descripcion")
+opciones_path = NodePath("Container/OptionButton")
+
+[node name="Container" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -246.0
+margin_top = -20.0
+margin_right = 246.0
+margin_bottom = 375.0
+
+[node name="nombre" type="Label" parent="Container"]
+anchor_right = 1.0
+margin_left = 26.0
+margin_top = 19.0
+margin_right = -26.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 1 )
+text = "NPC Name"
+clip_text = true
+
+[node name="descripcion" type="RichTextLabel" parent="Container"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 46.0
+margin_top = -124.5
+margin_right = -46.0
+margin_bottom = 0.5
+text = "Comió una fruta sin usar protección y ahora tiene estos síntomas ¡Ayúdalo a identificar la infección que contrajo!
+"
+
+[node name="OptionButton" type="OptionButton" parent="Container"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -66.5
+margin_top = -103.0
+margin_right = 66.5
+margin_bottom = -80.0
+text = "Elige una opción"
+
+[node name="Button" type="Button" parent="Container"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -62.5
+margin_top = -63.0
+margin_right = 62.5
+margin_bottom = -40.0
+text = "Ayuda a un amigo"
+
+[node name="confirm" type="ConfirmationDialog" parent="."]
+use_parent_material = true
+margin_right = 292.0
+margin_bottom = 139.0
+dialog_autowrap = true
+
+[node name="fail" type="AcceptDialog" parent="."]
+use_parent_material = true
+margin_right = 349.0
+margin_bottom = 212.0
+theme = ExtResource( 3 )
+dialog_autowrap = true
+
+[connection signal="pressed" from="Container/Button" to="." method="_on_Button_pressed"]
+[connection signal="confirmed" from="confirm" to="." method="_on_confirm_confirmed"]
+[connection signal="confirmed" from="fail" to="." method="_on_fail_confirmed"]
