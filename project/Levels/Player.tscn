@@ -19,8 +19,6 @@ radius = 2.0
 [node name="Player" type="Spatial"]
 script = ExtResource( 3 )
 
-[node name="peach" parent="." instance=ExtResource( 8 )]
-
 [node name="PlayerCol" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56609, 0 )
 script = ExtResource( 2 )
@@ -48,6 +46,8 @@ current = true
 far = 500.0
 
 [node name="Model" type="Spatial" parent="SmoothMove"]
+
+[node name="peach" parent="SmoothMove/Model" instance=ExtResource( 8 )]
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
@@ -83,8 +83,9 @@ margin_bottom = 20.5
 [node name="TextureRect" type="TextureRect" parent="HUD/Stats/Inventory"]
 anchor_top = 0.5
 anchor_bottom = 0.5
+margin_left = 32.0
 margin_top = -20.0
-margin_right = 40.0
+margin_right = 72.0
 margin_bottom = 20.0
 texture = ExtResource( 7 )
 expand = true
@@ -94,9 +95,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -57.0
+margin_left = -25.0
 margin_top = -7.0
-margin_right = -16.0
+margin_right = 16.0
 margin_bottom = 20.0
 custom_fonts/font = ExtResource( 6 )
 text = "INV"
@@ -114,8 +115,9 @@ margin_bottom = 20.5
 [node name="TextureRect2" type="TextureRect" parent="HUD/Stats/Score"]
 anchor_top = 0.5
 anchor_bottom = 0.5
+margin_left = 48.0
 margin_top = -20.0
-margin_right = 40.0
+margin_right = 88.0
 margin_bottom = 20.0
 texture = ExtResource( 4 )
 expand = true
@@ -125,9 +127,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -57.0
+margin_left = -9.0
 margin_top = -7.0
-margin_right = -3.0
+margin_right = 45.0
 margin_bottom = 20.0
 custom_fonts/font = ExtResource( 6 )
 text = "SCORE"
